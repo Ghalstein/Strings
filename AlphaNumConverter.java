@@ -21,7 +21,7 @@ public class AlphaNumConverter{
 		}
 	
 		if (product > 0) {
-			return product + 26;
+			return product + 26 * (spreadSheetId.length() - 1);
 		}
 		else 
 			return 0;
