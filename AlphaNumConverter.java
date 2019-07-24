@@ -15,16 +15,16 @@ public class AlphaNumConverter{
 			return convertSubstring(spreadSheetId.charAt(0));
 		}
 
-		int product = 1;
+		int product = 0;
 		for (int i = 0; i < spreadSheetId.length(); i++) {
-			product *= (spreadSheetId.charAt(i) - 64);
+			product = product * 26 + (spreadSheetId.charAt(i) - 64);
 		}
 	
 		if (product > 0) {
-			return product + 26 * (spreadSheetId.length() - 1);
+			return product;
 		}
 		else 
-			return 0;
+			return -1;
 
 	}
 
@@ -32,7 +32,7 @@ public class AlphaNumConverter{
 		String spreadSheetId = args[0];
 		int conversion = convertString(spreadSheetId);
 		
-		if (conversion == 0) {
+		if (conversion == -1) {
 			String wrongInput = "You did not eneter a valid spreadsheet ID";
 			System.out.println(wrongInput);
 		}
