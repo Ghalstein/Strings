@@ -18,7 +18,7 @@ public class RunLengthEncode {
 				str += repGen(code.charAt(i), Integer.parseInt(tempNum));
 				tempNum = "";
 			}
-			else {
+			else if (Character.isDigit(code.charAt(i))) {
 				tempNum += code.charAt(i);
 			}	
 		}
