@@ -12,8 +12,15 @@ public class RunLengthEncode {
 	// loops through the encoded code and converts it back to the uncoded string
 	public static String decode(String code) {
 		String str = "";
-		for (int i = 0; i < code.length(); i += 2) {
-			str += repGen(code.charAt(i + 1), code.charAt(i) - '1');
+		String tempNum = "";
+		for (int i = 0; i < code.length(); ++i) {
+			if (code.charAt(i) >= 'a' && code.charAt(i) <= 'z') {
+				str += repGen(code.charAt(i), Integer.parseInt(tempNum));
+				tempNum = "";
+			}
+			else if (Character.isDigit(code.charAt(i))) {
+				tempNum += code.charAt(i);
+			}	
 		}
 		return str;
 	}
@@ -44,9 +51,9 @@ public class RunLengthEncode {
 	}
 	public static void main(String[] args) {
 		System.out.println("Testing encode():");
-		System.out.println(encode(args[0]));
+		System.out.println(encode(args[0].toLowerCase()));
 		System.out.println();
 		System.out.println("Testing decode():");
-		System.out.println(decode(args[1]));
+		System.out.println(decode(args[1].toLowerCase()));
 	}
 }
