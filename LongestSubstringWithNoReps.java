@@ -2,7 +2,7 @@ import java.util.*;
 
 class LongestSubstringWithNoReps {
     
-    public int lengthOfLongestSubstring(String s) {
+    public static int lengthOfLongestSubstring(String s) {
         HashMap<Character, Integer> hash = new HashMap<>();
         int count = 0;
         int currCount = 0;
@@ -25,8 +25,8 @@ class LongestSubstringWithNoReps {
     }
 
     public static void main(String[] args) {
-      System.out.println("aabcdefg: " + lengthOfLongestSubstring("aabcdefg"));
-      System.out.println("demoijfngwoe: " + lengthOfLongestSubstring("demoijfngwoe"));
-      System.out.println("abcdefghijklmnopqrstuvwxyzabc: " + lengthOfLongestSubstring("abcdefghijklmnopqrstuvwxyzabc"));
+      System.out.println("aabcdefg: " + LongestSubstringWithNoReps.lengthOfLongestSubstring("aabcdefg"));
+      System.out.println("demoijfngwoe: " + LongestSubstringWithNoReps.lengthOfLongestSubstring("demoijfngwoe"));
+      System.out.println("abcdefghijklmnopqrstuvwxyzabc: " + LongestSubstringWithNoReps.lengthOfLongestSubstring("abcdefghijklmnopqrstuvwxyzabc"));
     }
 }
