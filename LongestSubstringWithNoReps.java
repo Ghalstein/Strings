@@ -1,3 +1,5 @@
+import java.util.*;
+
 class LongestSubstringWithNoReps {
     
     public int lengthOfLongestSubstring(String s) {
