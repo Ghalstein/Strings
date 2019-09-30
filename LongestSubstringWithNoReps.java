@@ -23,4 +23,10 @@ class LongestSubstringWithNoReps {
         if (currCount > count) return currCount;
         return count;
     }
+
+    public static void main(String[] args) {
+      System.out.println("aabcdefg: " + lengthOfLongestSubstring("aabcdefg"));
+      System.out.println("demoijfngwoe: " + lengthOfLongestSubstring("demoijfngwoe"));
+      System.out.println("abcdefghijklmnopqrstuvwxyzabc: " + lengthOfLongestSubstring("abcdefghijklmnopqrstuvwxyzabc"));
+    }
 }
